@@ -1,0 +1,341 @@
+.dashboard{
+    overflow-y: auto;
+
+    .bar{
+        height: 4rem;
+        @include flex(row, unset);
+        padding: 0 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+        > input{
+            margin-right: auto;
+            @include inputStyle(100%, 1rem 0);
+            font-size: 1.2rem;
+        }
+        >img{
+            border-radius: 50%;
+            @include square(2rem);
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        >svg{
+            font-size: 1.2rem;
+            opacity: 0.7;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .widget-container{
+
+        @include flex(row, space-between, stretch, 2rem);
+        padding: 2rem 2rem 2rem 0;
+    }
+    .widget{
+        min-width: 16rem;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.137);
+        padding: 2rem;
+        border-radius: 10px;
+        @include flex(row, space-between, stretch, 0);
+
+        > .widget-info{
+            > p{
+                opacity: 0.7;
+                font-size: 0.9rem;
+            }
+            > h4{
+                font-size: 1.5rem;
+            }
+            > span{
+                @include flex(row, unset, center, 0.2rem)
+            }
+        }
+        > .widget-circle{
+            position: relative;
+            @include square(5rem);
+            border-radius: 50%;
+            flex: none;
+            display: grid;
+            place-items: center;
+            background-color: rgb(196, 228, 246);
+
+            &::before {
+                content: "";
+                position: absolute;
+                @include square(4rem);
+                background-color: white;
+                border-radius: 100%;
+            }
+            > span{
+                position: relative;
+            }
+        }
+    }
+
+    .chart-container{
+        @include flex(row, unset,unset, 2rem);
+        padding: 0 2rem 2rem 0;
+        > div{
+            background-color: white;
+            border-radius: 10px;
+        }
+        > .revenue-chart{
+            width: 100%;
+            padding: 1rem 3rem;
+            >h2{
+                @include heading;
+                margin: 1rem 0 2rem 0.25rem;
+                text-align: center;
+                opacity: 0.6;
+            }
+
+        }
+
+        > .dashboard-category{
+            width: 100%;
+            max-width: 16rem;
+            padding-bottom: 2rem;
+            @include flex(column, center, unset, 0);
+            > h2{
+                @include heading;
+                text-align: center;
+                opacity: 0.6;
+                margin: 1rem 0 2rem 0.25rem;
+            }
+
+            > .dashboard-item{
+                // margin: 1rem 1rem;
+                // @include flex(row, unset, center,0.75rem);
+                padding: 1rem;
+                @include flex(row, space-between);
+                overflow-y: auto;
+                > h4{
+                    letter-spacing: 1px;
+                    opacity: 0.8;
+                }
+                > .dash-outer-items{
+                    background-color: rgb(242, 242, 242);
+                    margin-left: auto;
+                    width: 6rem;
+                    border-radius: 20px;
+                    > .dash-item{
+                        height: 0.5rem;
+                        border-radius: 20px;
+                    }
+                }
+                
+            }
+        }
+        
+
+        
+    }
+
+    .transaction-container{
+        display: flex;
+        gap: 3rem;
+        height: 30rem;
+        padding: 0 2rem 2rem 0;
+        > div{
+            background: white;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.137);
+            border-radius: 10px;
+        }
+        > .gender-chart{
+            width: 100%;
+            max-width: 17rem;
+            padding: 1rem;
+            position: relative;
+            >h2{
+                @include heading;
+                text-align: center;
+                margin: 1.5rem 0 2rem 0;
+                opacity: 0.7;
+            }
+            >p{
+                @include posCenter;
+                font-size: 2rem;
+                color: rgba(0, 0, 0, 0.64);
+            }
+
+        }
+
+        .transaction-box{
+            width: 100%;
+            padding: 2rem;
+            // max-width: 80rem;
+            overflow-x: auto;
+            &::-webkit-scrollbar{
+                display: none;
+              }
+            > .heading{
+                margin: 1rem 0;
+                @include heading;
+                text-align: center;
+                opacity: 0.7;
+
+            }
+        }
+        
+
+        
+        
+        
+
+    }
+
+
+    
+}
+
+.product-container{
+    background-color: white;
+    overflow: auto;
+    .next-previous-div{
+        @include flex(row, center, unset , 2rem);
+        margin: 1rem;
+        > button{
+            border: none;
+            background: rgba(61, 144, 246);
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+           color: white;
+
+            &:disabled{
+                background-color: #fcfcfc;
+                cursor: not-allowed
+            }
+        }
+    }
+    @include square(100%);
+    a{
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        border:none;
+        background-color: rgb(61, 144, 246);
+        color: rgb(61, 194, 246);
+        color: white;
+        font-size: 1.2rem;
+    }
+    .heading{
+        @include heading;
+        opacity: 0.6;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    
+    td,
+    th {
+        // border: 1px solid #dddddd;
+        padding: 1rem;
+    }
+    tbody {
+        tr:nth-child(odd) {
+            background-color: #fcfcfc;
+        }
+    }
+    
+
+    
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td,
+th {
+    // border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+.create-new-button{
+    position: fixed;
+    top: 2rem;
+    right: 4rem;
+    @include square(2.5rem);
+    background: rgba(201, 9, 9);
+    @include flex(row, center, center, 0);
+    border-radius: 50%;
+    color: white;
+
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+        background-color: green;
+        transition: all ease-in-out 1s;
+    }
+}
+.newproduct{
+   
+    @include flex();
+    flex-direction: row-reverse;
+    .img-div{
+        overflow-y: auto;
+        border-radius: 5px;
+        height: 85vh;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.137);
+        width: 100%;
+        max-width: 350px;
+        padding: 1rem;
+        background: white;
+        > img{
+            width: 280px;
+            height: 350px;
+            margin: auto;
+        }
+        text-align: center;
+    }
+
+    > article{
+        border-radius: 5px;
+        height: 85vh;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.137);
+        width: 100%;
+        max-width: 350px;
+        background-color: white;
+        padding: 1rem 2rem;
+        >form {
+            @include flex(column, unset, center,0);
+            >img{
+                @include square(4rem);
+                object-fit: cover;
+                border-radius: 5px;
+                margin-bottom: 0.5rem;
+            }
+            >div{
+                margin-top: 1rem; 
+                @include flex(column,unset, unset,0rem);
+                width: 100%;
+                input{
+                    padding: 0.5rem 1rem;
+                    outline: none;
+
+                    &::-webkit-inner-spin-button{
+                        -webkit-appearance: none; 
+                    }
+            }
+            }
+            > h2{
+                opacity: 0.6;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                text-align: center;
+            }
+            button{
+                border: none;
+                padding: 0.5rem 1rem;
+                background-color: rgb(61, 144, 246);
+                font-size: 1.2rem;
+                font-weight: bold;
+                width: 100%;
+            }
+            
+        }
+    }
+}

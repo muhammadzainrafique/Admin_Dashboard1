@@ -1,0 +1,53 @@
+.transaction-managment{
+    @include  flex;
+    > div{
+        border-radius: 5px;
+        height: 85vh;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.137);
+        width: 100%;
+        max-width: 350px;
+        background-color: white;
+        >h2{
+            @include heading;
+            opacity: 0.6;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .order-info{
+        @include flex(column, unset, unset, 0rem);
+        padding: 1rem 2rem;
+        >div{
+            line-height: 1.7;
+        }
+        > button{
+            margin-top: 2rem;
+            border: none;
+            padding: 0.5rem 1rem;
+            background-color: rgb(5, 107, 224);
+            font-size: 1.2rem;
+            width: 100%;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .order-items{
+        padding: 1rem 2rem;
+        div{
+            @include flex(row, center, center, 1rem);
+            margin: 1rem 0;
+            a{
+                // border-bottom: 2px solid rgb(63, 137, 255);
+                text-decoration: underline;
+            }
+            > img{
+                @include square(50px);
+                border-radius: 10px;
+            }
+        }
+    }
+}
